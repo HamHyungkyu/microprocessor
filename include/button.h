@@ -1,5 +1,5 @@
-#ifndef __MANGO_BUTTON_H
-#define __MANGO_BUTTON_H
+#ifndef __BUTTON_H
+#define __BUTTON_H
 
 #define MANGO_GPIO_BUTTON_PORT	S3C_GPIO_PORT_N
 

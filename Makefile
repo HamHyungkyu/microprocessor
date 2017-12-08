@@ -6,12 +6,15 @@ CP=cp
 
 OUTDIR=Debug
 OUTDIR_BIN=bin
-OUTFILE=$(OUTDIR)/lcd
+OUTFILE=$(OUTDIR)/project
 CFG_INC=-Iinclude
 OBJ=\
-	$(OUTDIR)/lcd.o \
-	$(OUTDIR)/s3c_uart.o \
+	$(OUTDIR)/project.o \
 	$(OUTDIR)/support.o\
+	$(OUTDIR)/s3c_uart.o \
+	$(OUTDIR)/s3c_gpio.o \
+	$(OUTDIR)/button.o\
+	$(OUTDIR)/lcd.o\
 
 CFLAGS64=-DCONFIG_MANGO_64
 COMPILE64=$(CC) -c -Wall -g -o "$(OUTDIR)/$(*F).o" $(CFG_INC) $(CFLAGS64) $<
