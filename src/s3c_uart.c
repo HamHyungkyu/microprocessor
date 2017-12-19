@@ -1,3 +1,5 @@
+#include "io.h"
+#include "config.h" 
 #include "s3c_uart.h"
 
 static unsigned long base;

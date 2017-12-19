@@ -1071,7 +1071,14 @@ typedef enum {
 #define oINTMSK				(0x14)		// VIC INT EN CLEAR (Mask by writing 1)
 #define oINTSUBMSK			(0x1C)		// VIC SOFT INT CLEAR
 #define oVECTADDR			(0xF00)		// VIC ADDRESS
-
+#define ADCCON				(0x7E00B000)	// 
+#define ADCTSC				(0x7E00B004)	// 
+#define ADCDLY				(0x7E00B008)	// 
+#define ADCDAT0				(0x7E00B00C)	// 
+#define ADCDAT1				(0x7E00B010)	// 
+#define ADCCLRINT			(0x7E00B018)	// 
+#define ADCCLRINTPNDNUP			(0x7E00B020)	// 
+	
 
 
 /*
@@ -1087,7 +1094,7 @@ typedef enum {
 
 /*
  * UART
- */
+*/
 #define ELFIN_UART_BASE		0x7F005000
 
 #define ELFIN_UART0_OFFSET	0x0000
@@ -1244,7 +1251,8 @@ typedef enum {
 /* Core Global Registers */
 #define S3C_OTG_GOTGCTL		(USBOTG_LINK_BASE + 0x000)	/* OTG Control & Status */
 #define S3C_OTG_GOTGINT		(USBOTG_LINK_BASE + 0x004)	/* OTG Interrupt */
-#define S3C_OTG_GAHBCFG		(USBOTG_LINK_BASE + 0x008)	/* Core AHB Configuration */
+#define S3C_OTG_GAHBCFG		(USBOTG_LINK_BASE + 0x008)	/* Core AHB 
+uration */
 #define S3C_OTG_GUSBCFG		(USBOTG_LINK_BASE + 0x00C)	/* Core USB Configuration */
 #define S3C_OTG_GRSTCTL		(USBOTG_LINK_BASE + 0x010)	/* Core Reset */
 #define S3C_OTG_GINTSTS		(USBOTG_LINK_BASE + 0x014)	/* Core Interrupt */
@@ -1826,7 +1834,7 @@ static inline S3C2410_SDI * S3C2410_GetBase_SDI(void)
 {
 	return (S3C2410_SDI *)ELFIN_SDI_BASE;
 }
-#endif*/
+#endif
 #else /* #ifndef __ASSEMBLY__ */
 
 /* watchdog */
@@ -1838,7 +1846,7 @@ static inline S3C2410_SDI * S3C2410_GetBase_SDI(void)
 #endif /* #ifndef __ASSEMBLY__ */
 
 /* PENDING BIT */
-/*#define BIT_EINT0		(0x1)
+#define BIT_EINT0		(0x1)
 #define BIT_EINT1		(0x1<<1)
 #define BIT_EINT2		(0x1<<2)
 #define BIT_EINT3		(0x1<<3)
