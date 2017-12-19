@@ -104,7 +104,7 @@ void touchInterruptServiceRoutine2(void){
   while( !( readl(ADCCON) & 1 << 15 ) );
 
   x = readl(ADCDAT0) & 0x3ff;
-  y = readl(ADCDAT0) & 0x3ff;
+  y = readl(ADCDAT1) & 0x3ff;
   printf("x : %d, y: %d\n", x, y);
 
   writel(0xd3, ADCTSC);
